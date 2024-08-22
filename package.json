@@ -1,0 +1,17 @@
+{
+  "name": "desafio_automatizacion_qa",
+  "version": "1.0.0",
+  "description": "* Realice el siguiente flujo utilizando Selenium con el lenguaje de programaci&oacute;n que prefiera.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/*.spec.js --no-timeout"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.7.3",
+    "selenium-webdriver": "^4.23.0",
+    "webdriver-manager": "^12.1.9"
+  }
+}
