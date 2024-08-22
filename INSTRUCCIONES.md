@@ -3,6 +3,7 @@
 ## Para ejecutar el proyecto primero hay que tener instalado lo siguiente:
 
 **Tener monitor similar al siguiente:**
+
 ```
 Tamaño pantalla: 21,45"
  Resolución de: 1920 x 1080
@@ -51,21 +52,17 @@ Tamaño pantalla: 21,45"
 
 ## Detalle Flujo:
 
-- before: Es donde se ejecuta el pre condición para todas las pruebas la cual se ejecuta una sola vez.
+- `before`: Es donde se ejecuta el pre condición para todas las pruebas la cual se ejecuta una sola vez.
   Se crea el usuario con datos obtenidos del archivo "\src\data\usuariosQa.json"
 
-  - `NOTA:` por cada ejecución ACTUALIZAR "email": "actualizar@correo.com",
-    En el formulario de ingreso va obteniendo la información de nombre, apellido, teléfono y contraseña desde el archivo externo.
-    Luego ingresa una nueva dirección y también va obteniendo la información desde el mismo archivo para ir rellenando el formulario y se realiza logout.
+  > NOTA: por cada ejecución ACTUALIZAR "email": "actualizar@correo.com".
+  > En el formulario de ingreso va obteniendo la información de nombre, apellido, teléfono y contraseña desde el archivo externo.
+  > Luego ingresa una nueva dirección y también va obteniendo la información desde el mismo archivo para ir rellenando el formulario y se realiza logout.
 
-- beforeEach: Es en donde se ejecuta las pre condiciones por cada caso siempre va antes de la prueba.
+- `beforeEach`: Es en donde se ejecuta las pre condiciones por cada caso siempre va antes de la prueba.
   Se valida que la creación del usuario fue correcta, y realiza login para validar que se encuentre activo antes de hacer la prueba.
   Ingresa email y password con datos desde "\src\data\usuariosQa.json" y valida que el ingreso fue correcto validando que aparezca con el texto de "Edit Account"
 
-- it: Es en donde se ejecuta la prueba como tal y donde se hace login con el usuario creado en `before`, aquí se agregan los productos al carrito de compra, se valida el texto de cada producto, luego valida datos de dirección y envío obtenidos del el archivo "\src\data\usuariosQa.json" también valida el texto desde el modal de "Flat Shipping Rate - $5.00" y también en el resumen del check out revisa el mismo monto para validar integridad de la prueba, luego al terminar va al historial de órdenes y valida la fecha actual para el envío. Ya que no está mostrando una fecha después como dice em el archivo "README.md" creo que es por (GMT-4) pero trate de validarlo igual obteniendo la fecha actual y haciendo la comparación para estar seguro que la fecha está bien, otro punto fue que el estado siempre queda en "Canceled", no como aparece en el archivo "README.md" pero igual se realizó la validación.
+- `it`: Es en donde se ejecuta la prueba como tal y donde se hace login con el usuario creado en `before`, aquí se agregan los productos al carrito de compra, se valida el texto de cada producto, luego valida datos de dirección y envío obtenidos del el archivo "\src\data\usuariosQa.json" también valida el texto desde el modal de "Flat Shipping Rate - $5.00" y también en el resumen del check out revisa el mismo monto para validar integridad de la prueba, luego al terminar va al historial de órdenes y valida la fecha actual para el envío. Ya que no está mostrando una fecha después como dice em el archivo "README.md" creo que es por (GMT-4) pero trate de validarlo igual obteniendo la fecha actual y haciendo la comparación para estar seguro que la fecha está bien, otro punto fue que el estado siempre queda en "Canceled", no como aparece en el archivo "README.md" pero igual se realizó la validación.
 
-**Siempre en todo el flujo se fuero realizando Screenshot de todo. Los cuales quedaron en la ruta "src\evidencia" y ademas se agregaron comentarios de descripcion de flujo y referencias a url para mayor informacion.**
-
-> Debe ser enviada vía un pull request a este repositorio https://github.com/previred/Desafio_Automatizacion_QA:
-
-> En el detalle del commit debes indicar los siguientes datos (Nombre Completo y Correo Electrónico):
+> Siempre en todo el flujo se fuero realizando Screenshot de todo. Los cuales quedaron en la ruta "src\evidencia" y ademas se agregaron comentarios de descripcion de flujo y referencias a url para mayor informacion.
